@@ -1,38 +1,17 @@
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 import styles from '@styles/Home.module.css'
+import MetaTags from '@components/MetaTags'
 
 export default function Home() {
   const { pathname } = useRouter()
-  const url = pathname
-  const title = 'Fake Store'
-  const description = 'This is description for fake store app.'
-  const image =
-    'https://i.pinimg.com/originals/c4/35/6c/c4356cd5454d06585e0a46066b555172.png'
+  const title = 'Welcome top Next.js'
+  const description = 'this application has been built with Next.js'
 
   return (
     <div className={styles.container}>
       <Head>
-        {/* Primary Meta Tags */}
-        <title>{title}</title>
-        <meta name='title' content={title} />
-        <meta name='description' content={description} />
-
-        <link rel='icon' href='/favicon.ico' />
-
-        {/* Facebook Meta Tags */}
-        <meta property='og:type' content='website' />
-        <meta property='og:url' content={url} />
-        <meta property='og:title' content={title} />
-        <meta property='og:description' content={description} />
-        <meta property='og:image' content={image} />
-
-        {/* Twitter Meta Tags */}
-        <meta property='twitter:card' content='summary_large_image' />
-        <meta property='twitter:url' content={url} />
-        <meta property='twitter:title' content={title} />
-        <meta property='twitter:description' content={description} />
-        <meta property='twitter:image' content={image} />
+        <MetaTags url={pathname} title={title} description={description} />
       </Head>
 
       <main className={styles.main}>
